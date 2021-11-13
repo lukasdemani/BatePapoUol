@@ -10,17 +10,37 @@
 </head>
 <body>
     <header>
-        <img src="img/logo 1.png" alt="">
-        <ion-icon name="people"></ion-icon>
+        <div class="logo">
+            <img src="img/logo 1.png" alt="">
+        </div>
+        <div class="people-icon">
+            <ion-icon name="people"></ion-icon>
+        </div>
     </header>
     <main>
-        <div class="teste">
-            
+        <div class="all-msgs">
+
         </div>
     </main>
     <footer>
-        <ion-icon name="paper-plane-outline"></ion-icon>
+        <div class="text-input">
+
+            <input class="msg-input" type="text" placeholder="Escreva aqui...">
+        </div>
+        <div onclick="sendMsg()" class="send-icon">
+
+            <ion-icon name="paper-plane-outline"></ion-icon>
+        </div>
     </footer>
+    <div class="login">
+        <div class="logo-login">
+            <img src="img/logo 1.png" alt="">
+        </div>
+        <div class="input-enter">
+            <input class="name-login" placeholder="Digite seu nome" type="text">
+            <button onclick="getUser()" class="enter">Entrar</button>
+        </div>
+    </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script>
