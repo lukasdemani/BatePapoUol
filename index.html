@@ -55,28 +55,32 @@
             para enviar mensagem
         </div>
         <div class="list-users">
-            <div class="username">
-                <div class="icon">
+            <div class="username all" onclick="checkUserAndVisibility(this, '.all')">
+                <div class="icon" >
 
                     <ion-icon name="people"></ion-icon>
                 </div>
                 <div class="nickname">
 
                     Todos
+
                 </div>
+                <ion-icon class="icon-check hidden-item" name="checkmark-sharp"></ion-icon>
             </div>
         </div>
         <div class="msg-visibility">
             <div class="h-visibility">
                 Escolha a visibilidade:
             </div>
-            <div class="msg-option">
+            <div class="msg-option" onclick="checkUserAndVisibility(this, '.msg-option')">
                 <ion-icon name="lock-open"></ion-icon>
-                Público
+                <p>Público</p>
+                <ion-icon class="icon-check hidden-item" name="checkmark-sharp"></ion-icon>
             </div>
-            <div class="msg-option">
+            <div class="msg-option" onclick="checkUserAndVisibility(this, '.msg-option')">
                 <ion-icon name="lock-closed"></ion-icon>
-                Reservadamente
+                <p>Reservadamente</p>
+                <ion-icon class="icon-check hidden-item" name="checkmark-sharp"></ion-icon>
             </div>
         </div>
     </div>

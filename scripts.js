@@ -124,13 +124,14 @@ function printUsers(users){
 
     for (i=0; i<users.data.length; i++){
         usersList.innerHTML += 
-        `<div class="username">
+        `<div class="username" onclick="checkUserAndVisibility(this, '.username')">
             <div class="icon">
                 <ion-icon name="person-circle"></ion-icon>
             </div>
             <div class="nickname">
-                ${users.data[i].name}
+                <p>${users.data[i].name}</p>
             </div>
+            <ion-icon class="icon-check hidden-item" name="checkmark-sharp"></ion-icon>
         </div>`
     }
 }
@@ -138,6 +139,21 @@ function printUsers(users){
 function hiddenUsers(){
     document.querySelector(".screen-users").style.visibility = "hidden";
     document.querySelector(".div-users").style.visibility = "hidden"; 
+}
+
+function checkUserAndVisibility(item, category) {
+    uncheckItems(category);
+    item.querySelector(".icon-check").classList.remove("hidden-item");
+    item.classList.add("checked");
+}
+
+function uncheckItems(category) {
+    const itemChecked = document.querySelector(category+".checked");
+    console.log(itemChecked);
+    if (itemChecked !== null){
+        itemChecked.querySelector(".icon-check").classList.add("hidden-item");
+        itemChecked.classList.remove("checked");
+    }  
 }
 
 let lastMsgApi = " ";
