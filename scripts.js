@@ -101,5 +101,44 @@ function inicializingChat() {
     setInterval(loadMsgs, 5000);
 }
 
+function openUsersList() {
+    const promise = axios.get("https://mock-api.driven.com.br/api/v4/uol/participants");
+    promise.then(printUsers);
+}
+
+function printUsers(users){
+    console.log(users);
+    let usersList = document.querySelector(".list-users");
+
+    document.querySelector(".screen-users").style.visibility = "visible";
+    document.querySelector(".div-users").style.visibility = "visible";
+
+    // if (document.querySelector(".screen-users").style.visibility == "hidden") {
+    //     document.querySelector(".screen-users").style.visibility = "visible";
+    //     document.querySelector(".div-users").style.visibility = "visible";
+    // }else{
+    //     document.querySelector(".screen-users").style.visibility = "hidden";
+    //     document.querySelector(".div-users").style.visibility = "hidden";
+    // }
+    console.log(users.data.length);
+
+    for (i=0; i<users.data.length; i++){
+        usersList.innerHTML += 
+        `<div class="username">
+            <div class="icon">
+                <ion-icon name="person-circle"></ion-icon>
+            </div>
+            <div class="nickname">
+                ${users.data[i].name}
+            </div>
+        </div>`
+    }
+}
+
+function hiddenUsers(){
+    document.querySelector(".screen-users").style.visibility = "hidden";
+    document.querySelector(".div-users").style.visibility = "hidden"; 
+}
+
 let lastMsgApi = " ";
 let nameUser = " ";
