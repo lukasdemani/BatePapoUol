@@ -48,8 +48,6 @@ main {
 
 .msg {
 
-    background-color: #dcdcdc;
-
     display: flex;
     align-items: center;
 
@@ -57,7 +55,6 @@ main {
 
     word-break: break-all;
 
-    /* overflow-wrap: break-word; */
 }
 
 .status {
@@ -68,7 +65,7 @@ main {
     background-color: #ffffff;
 }
 
-.private-message {
+.private_message {
     background-color: #FFDEDE;
 }
 
@@ -97,6 +94,22 @@ footer {
     width: 100%;
     height: 100%;
     border: none;
+
+    font-size: 18px;
+}
+
+.msg-input::placeholder {
+    font-style: italic;
+    color: black;
+}
+
+.second-placeholder {
+    position: fixed;
+    bottom: 3px;
+    left: 3px;
+    font-size: 14px;
+    font-weight: 300;
+
 }
 
 .send-icon {
@@ -155,7 +168,7 @@ footer {
     border-color: #E5E5E5;
 }
 
-::placeholder {
+.name-login::placeholder {
     text-align: center;
 }
 
